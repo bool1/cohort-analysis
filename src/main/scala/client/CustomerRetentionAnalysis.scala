@@ -10,7 +10,7 @@ object CustomerRetentionAnalysis extends App {
 
 
 
-  	val data = new CsvParser("CustomerOrders.csv").parse.take(5000)
+  	val data = new CsvParser("CustomerOrders.csv").parse
   	println("Lines found: " + data.length)  
 
 
@@ -36,7 +36,7 @@ object CustomerRetentionAnalysis extends App {
 	val result = analyzer.analysis(metric)(cohorts)
 
 	println("result: " + result)
-	
+
 
 
 }
