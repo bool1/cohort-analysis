@@ -1,31 +1,56 @@
 # cohort-analysis
 
-## Dependencies
+#### Notes
+
+- Intention is to showcase modularity, composability, testability, extensibility and other key characterstics
+- This is a first iteration as opposed to 'complete' product. Hence this is not complete(or anywhere near complete) if it is evaluated like a University assignment
+
+#### Dependencies
 - Scala 2.12.*
 - sbt 0.13(Scala Build tool)
 - Java 8+
 
-## Build
+#### Build
 - Clone repo, go to the base directory
 - `sbt compile`
 
-## Run
+#### Run
 - **Production:** Run executable produced by sbt
 - **Development:** `sbt ~run`(~ enables hot reloading)
 
-## Tests
+**Sample output**(input capped to 5000 lines for brevity)
+  Please note that it doesn't format output as table as the program is dynamic and can produce behavior groups of arbitrary size depending upon provided pivot function
+```
+Lines found: 5000
+result: Vector(CohortWithBehaviorMetrics(2015-Jan,5000,Vector(BehaviorMetric(2015-Apr,CustomerRetention(0.1506,0.0146)), BehaviorMetric(2015-Jul,CustomerRetention(0.0288,0.002)), BehaviorMetric(2015-Jan,CustomerRetention(0.204,0.1396)), BehaviorMetric(2015-Jun,CustomerRetention(0.1286,0.0076)), BehaviorMetric(2015-Feb,CustomerRetention(0.1736,0.0412)), BehaviorMetric(2015-May,CustomerRetention(0.1342,0.01)), BehaviorMetric(2015-Mar,CustomerRetention(0.1802,0.0282)))))
+```
+#### Tests
 - `sbt test`
 - Only CohortSpec.scala has meaningful has tests with relevant test data. Other test cases are yet to be implemented. 
-
-## Key Points:
-
-- Showcase modularity, composability, testability, extensibility and other key characterstics
-- This is a first iteration as opposed to 'complete' product. Hence this is not complete(or anwhere near complete) if it is evaluated like a University assignment
+**Sample output**
+```
+[info] AnalysisSpec:
+[info] Analyzer
+[info] - should analyze cohort behaviors
+[info] CohortSpec:
+[info] Cohort Producer
+[info] - should breakdown collection into cohorts by month
+[info] Cohort Producer
+[info] - should breakdown collection into cohorts by year
+[info] Cohort Producer
+[info] - should breakdown each cohorts(by year) into behaviors(by month)
+[info] Run completed in 771 milliseconds.
+[info] Total number of tests run: 4
+[info] Suites: completed 2, aborted 0
+[info] Tests: succeeded 4, failed 0, canceled 0, ignored 0, pending 0
+[info] All tests passed.
+[success] Total time: 13 s, completed Feb 11, 2019 10:47:48 AM
+```
 
 ## Design
-Three major components: (Cohort)Producer, (Cohort)Analyzer, Client. Producer and Analyzer are type agnostic(type parameterized) and have higher order functions accepts predicates.They don't share wiring except data models that can be improved easily in next iteration.
+Three major components: (Cohort)Producer, (Cohort)Analyzer, Client. Producer and Analyzer are type agnostic(type parameterized) and have higher order functions that accepts predicates.They don't share wiring except data models that can be improved easily in next iteration.
 
-**Producer:** Breaksdown any collection `Seq[T]` into `Cohort[T]` and then further pivots on a behavior resulting in
+**Producer:** Breaksdowns any collection `Seq[T]` into `Cohort[T]` and then further pivots on a behavior resulting in
 `CohortWithBehaviors[T`. Producer accepts arbitrary pivot predicates. For instance, you can provide a predicate on DateTime type that groups Cohorts by week, month, year or anything. It doesn't have to be time. It can be any type.
 
 **Analyzer:** Applies client provided metric function on `CohortWithBehaviors[T]` and yield behavior metrics. Again this is higher order function and can take any arbitrary metric function.
