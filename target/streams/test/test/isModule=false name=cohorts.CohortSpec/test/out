@@ -1,0 +1,7 @@
+[0m[[0m[0minfo[0m] [0m[0m[32mCohortSpec:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mCohort Producer[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should breakdown collection into cohorts by month[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mCohort Producer[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should breakdown collection into cohorts by year[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mCohort Producer[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should breakdown each cohorts(by year) into behaviors(by month)[0m[0m

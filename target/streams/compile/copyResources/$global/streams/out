@@ -1,0 +1,3 @@
+[0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/parshva/Projects/cohort-analysis/src/main/resources/CustomerOrders_Left_Outer.csv,/Users/parshva/Projects/cohort-analysis/target/scala-2.12/classes/CustomerOrders_Left_Outer.csv)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/parshva/Projects/cohort-analysis/src/main/resources/CustomerOrders.csv,/Users/parshva/Projects/cohort-analysis/target/scala-2.12/classes/CustomerOrders.csv)[0m

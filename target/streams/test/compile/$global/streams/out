@@ -1,0 +1,4 @@
+[0m[[0m[31merror[0m] [0m[0m/Users/parshva/Projects/cohort-analysis/src/test/scala/analysis/AnalysisSpec.scala:35:42: package cohorts is not a value[0m
+[0m[[0m[31merror[0m] [0m[0m		val result = analyzer.analysis(metric)(cohorts)[0m
+[0m[[0m[31merror[0m] [0m[0m		                                       ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

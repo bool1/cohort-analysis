@@ -1,0 +1,22 @@
+[0m[[0m[31merror[0m] [0m[0m/Users/parshva/Projects/cohort-analysis/src/main/scala/cohorts/CanProduceCohort.scala:8:51: not found: type Cohort[0m
+[0m[[0m[31merror[0m] [0m[0m	def produce(pivotOn: T => String): Seq[T] => Seq[Cohort[T]] [0m
+[0m[[0m[31merror[0m] [0m[0m	                                                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/parshva/Projects/cohort-analysis/src/main/scala/cohorts/CanProduceCohort.scala:9:47: not found: type Cohort[0m
+[0m[[0m[31merror[0m] [0m[0m	def withBehaviors(pivotOn: T => String): Seq[Cohort[T]] => Seq[CohortWithBehaviors[T]][0m
+[0m[[0m[31merror[0m] [0m[0m	                                             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/parshva/Projects/cohort-analysis/src/main/scala/cohorts/CanProduceCohort.scala:9:65: not found: type CohortWithBehaviors[0m
+[0m[[0m[31merror[0m] [0m[0m	def withBehaviors(pivotOn: T => String): Seq[Cohort[T]] => Seq[CohortWithBehaviors[T]][0m
+[0m[[0m[31merror[0m] [0m[0m	                                                               ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/parshva/Projects/cohort-analysis/src/main/scala/cohorts/CanProduceCohort.scala:18:30: not found: value Cohort[0m
+[0m[[0m[31merror[0m] [0m[0m			case (label, segments) => Cohort(label, segments.length, segments)[0m
+[0m[[0m[31merror[0m] [0m[0m			                          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/parshva/Projects/cohort-analysis/src/main/scala/cohorts/CanProduceCohort.scala:24:9: not found: value Cohort[0m
+[0m[[0m[31merror[0m] [0m[0m			case Cohort(label, size, segments) => CohortWithBehaviors(label,[0m
+[0m[[0m[31merror[0m] [0m[0m			     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/parshva/Projects/cohort-analysis/src/main/scala/cohorts/CanProduceCohort.scala:24:42: not found: value CohortWithBehaviors[0m
+[0m[[0m[31merror[0m] [0m[0m			case Cohort(label, size, segments) => CohortWithBehaviors(label,[0m
+[0m[[0m[31merror[0m] [0m[0m			                                      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/parshva/Projects/cohort-analysis/src/main/scala/cohorts/CanProduceCohort.scala:27:21: not found: value Behavior[0m
+[0m[[0m[31merror[0m] [0m[0m					case (l, s) => Behavior(l, s)[0m
+[0m[[0m[31merror[0m] [0m[0m					               ^[0m
+[0m[[0m[31merror[0m] [0m[0m7 errors found[0m
