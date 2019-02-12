@@ -2,8 +2,11 @@
 
 #### Notes
 
-- Intention is to showcase modularity, composability, testability, extensibility and other key characterstics
-- This is a first iteration as opposed to 'complete' product. Hence this is not complete(or anywhere near complete) if it is evaluated like a University assignment
+- Intention is to showcase modularity, composability, testability, extensibility and other key characterstics for the work done in less than 5 hours. It is a tall order, I guess. :)
+- This is a first iteration as opposed to 'complete' product. It is nowhere near complete if it is evaluated like a University assignment.
+- Data processing is a nearly perfect candidate for "side-effect free" application(e.g. Spark) as computing is inherently spatial. This program doesn't use any computing cluster or data processing library.
+- To make it more readable to "foreign" eyes, program uses only basic functional programming features such as currying, higher order functions and morphisms and lays foundation for creating DSL but doesn't use constructs from category theory such as Monoids and Semigroups.
+- Some Scala specific features such as implicit, ad-hoc polymorphism, for comprehension for monads and library like cats aren't used. This makes code look little bit verbose than needed but at least it is readable to foreign eyes or those new to Scala.
 
 #### Dependencies
 - Scala 2.12.*
@@ -11,7 +14,7 @@
 - Java 8+
 
 #### Build
-- Clone repo, go to the base directory
+- Clone repo, go to the base directory and run
 - `sbt compile`
 
 #### Run
@@ -19,7 +22,7 @@
 - **Development:** `sbt ~run`(~ enables hot reloading)
 
 **Sample output**(input capped to 5000 lines for brevity)
-  Please note that it doesn't format output as table as the program is dynamic and can produce behavior groups of arbitrary size depending upon provided pivot function
+  Please note that it doesn't format output as table as the program is dynamic and can produce behavior groups of arbitrary size depending upon provided pivot function. Unless capped, table layout could be very wide and leave "holes", especially when pivoting on a more granular time slice(e.g. hourly) or on an attribute where values aren't distributed evenly across the domain.
 ```
 Lines found: 5000
 result: Vector(CohortWithBehaviorMetrics(2015-Jan,5000,Vector(BehaviorMetric(2015-Apr,CustomerRetention(0.1506,0.0146)), BehaviorMetric(2015-Jul,CustomerRetention(0.0288,0.002)), BehaviorMetric(2015-Jan,CustomerRetention(0.204,0.1396)), BehaviorMetric(2015-Jun,CustomerRetention(0.1286,0.0076)), BehaviorMetric(2015-Feb,CustomerRetention(0.1736,0.0412)), BehaviorMetric(2015-May,CustomerRetention(0.1342,0.01)), BehaviorMetric(2015-Mar,CustomerRetention(0.1802,0.0282)))))
