@@ -2,8 +2,8 @@
 
 #### Notes
 
-- Intention is to showcase modularity, composability, testability, extensibility and other key characterstics for the work done in less than 5 hours. It is a tall order, I guess. :)
-- This is a first iteration as opposed to 'complete' product. It is nowhere near complete if it is evaluated like a University assignment.
+- Intention is to showcase modularity, composability, testability, extensibility and other key characterstics for the work (including documentation) done in less than 5 hours. It is a tall order, I guess. :)
+- This is a first iteration as opposed to a 'complete' product. It is nowhere near complete if it is evaluated like a University assignment.
 - Data processing is a nearly perfect candidate for "side-effect free" application(e.g. Spark) as computing is inherently spatial. This program doesn't use any computing cluster or data processing library.
 - To make it more readable to "foreign" eyes, program uses only basic functional programming features such as currying, higher order functions and morphisms and lays foundation for creating DSL but doesn't use constructs from category theory such as Monoids and Semigroups.
 - Some Scala specific features such as implicit, ad-hoc polymorphism, for comprehension for monads and library like cats aren't used. This makes code look little bit verbose than needed but at least it is readable to foreign eyes or those new to Scala.
@@ -77,7 +77,7 @@ and *"orders.csv"* can be easily done in a program. However, it is handled with 
 
 1. Reusability - Why not to reuse efficient and optimized component instead of rewriting? For instance, sort command can leverage disk while programming language sort is restrcited by available main memory.
 
-2. Composability - Unix pipe and std-in/out redirection allows data to move freely from one component to another. And components can be arranged in variety of order.
+2. Composability - Unix pipe and std-in/out redirection allows data to move freely from one component to another. And components can be arranged in different order creating several permutations and combinations.
 
 Something like:
 
@@ -85,14 +85,14 @@ Something like:
 
 Above command:
 1. Removes headers from csv files before processing
-2. Remove CR(Carriage return) if files are created on Windows
-3. Sort
-4. Perform join on two columns
-5. Sort Numerically
+2. Removes CR(Carriage return) if files are created on Windows
+3. Performs non-numerical Sort
+4. Performs join on two columns
+5. Sorts numerically
 
 ## Implementation Details
 
-- Program doesn't implement all the request functionality.
+- Program doesn't implement all requested functionalities due to time constraints.Many edge cases aren't handled and even simplified to keep focus on core features, again due to derth of time.
 
 - Program reads "CustomerOrders.csv" from resources("/src/main/resources"). This file is produced by:
 `join -t , -a 1 -1 1 -2 3 <(tail -n +2 customers.csv | tr -d '\r' | sort -k 1 -t ,) <(tail -n +2 orders.csv | tr -d '\r' | sort -k 3 -t ,) | sort -n`
