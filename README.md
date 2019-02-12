@@ -22,7 +22,7 @@
 - **Development:** `sbt ~run`(~ enables hot reloading)
 
 **Sample output**(input capped to 5000 lines for brevity)
-  Please note that it doesn't format output as table as the program is dynamic and can produce behavior groups of arbitrary size depending upon provided pivot function. Unless capped, table layout could be very wide and leave "holes", especially when pivoting on a more granular time slice(e.g. hourly) or on an attribute where values aren't distributed evenly across the domain.
+  Please note that it doesn't format output as table as the program is dynamic and can produce behavior groups of arbitrary size depending upon provided pivot function. Unless capped, table layout could be very wide and leave "holes", especially when pivoting on a more granular time slice(e.g. hourly) or on an attribute where values aren't distributed evenly across the domain. Besides implementing fluid layout requires more time.
 ```
 Lines found: 5000
 result: Vector(CohortWithBehaviorMetrics(2015-Jan,5000,Vector(BehaviorMetric(2015-Apr,CustomerRetention(0.1506,0.0146)), BehaviorMetric(2015-Jul,CustomerRetention(0.0288,0.002)), BehaviorMetric(2015-Jan,CustomerRetention(0.204,0.1396)), BehaviorMetric(2015-Jun,CustomerRetention(0.1286,0.0076)), BehaviorMetric(2015-Feb,CustomerRetention(0.1736,0.0412)), BehaviorMetric(2015-May,CustomerRetention(0.1342,0.01)), BehaviorMetric(2015-Mar,CustomerRetention(0.1802,0.0282)))))
